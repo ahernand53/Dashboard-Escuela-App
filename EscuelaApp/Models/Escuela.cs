@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace EscuelaApp.Models
 {
-    public class Escuela: ObjetoEscuelaBase
+    public class Escuela: IModelBase
     {
         public int AñoDeCreación { get; set; }
 

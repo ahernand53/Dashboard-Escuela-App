@@ -15,6 +15,15 @@
 </div>
 
 <div class="container">
-   <partial name="_TablaObjetoPartial">
+    @if (!string.IsNullOrEmpty(ViewBag.Mensaje)) 
+    {
+        <div class="alert alert-success" role="alert">
+            @ViewBag.Mensaje
+        </div>
+    }
+
+    <a class="btn btn-success" asp-controller="Curso" asp-action="create">Nuevo</a>
+
+    <partial name="_TablaObjetoPartial">
 </div>
 

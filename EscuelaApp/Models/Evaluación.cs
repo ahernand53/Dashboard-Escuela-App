@@ -2,7 +2,7 @@ using System;
 
 namespace EscuelaApp.Models
 {
-    public class Evaluación:ObjetoEscuelaBase
+    public class Evaluación:IModelBase
     {
         public Alumno Alumno { get; set; }
         public string AlumnoId { get; set; }

@@ -1,13 +1,14 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace EscuelaApp.Models
 {
-    public abstract class ObjetoEscuelaBase
+    public abstract class IModelBase
     {
         public string Id { get; set; }
-        public string Nombre { get; set; }
+        public virtual string Nombre { get; set; }
 
-        public ObjetoEscuelaBase()
+        public IModelBase()
         {
             Id = Guid.NewGuid().ToString();
         }

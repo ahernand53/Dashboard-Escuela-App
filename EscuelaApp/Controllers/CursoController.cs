@@ -41,6 +41,30 @@ namespace EscuelaApp.Controllers
             return View(CURSO.SingleOrDefault());
         }
 
+        [HttpGet("Nuevo")]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost("Nuevo")]
+        public IActionResult Store(Curso curso)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("Create", curso);
+            }
+
+            var escuela = _context.Escuelas.FirstOrDefault();
+            curso.EscuelaId = escuela.Id;
+
+            _context.Cursos.Add(curso);
+            _context.SaveChanges();
+            ViewBag.Mensaje = "Curso creado satisfatoriamente";
+
+            return View("Details", curso);
+        }
+
     }
 
 }
