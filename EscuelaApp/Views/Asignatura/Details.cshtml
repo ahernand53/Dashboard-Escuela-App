@@ -1,0 +1,26 @@
+﻿@model Asignatura
+
+@{
+    ViewData["Title"] = "Detalles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="jumbotron bg-info">
+    <div class="container">
+        <h3 class="card-title">Detalles de asignatura</h3>
+    </div>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header">
+            <h3>@Model.Nombre</h3>
+            <span class="text-muted">@Model.Id</span>
+        </div>
+    </div>
+
+</div>
+
+
+

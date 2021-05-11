@@ -1,0 +1,36 @@
+﻿@model Escuela
+
+@{
+    ViewData["Title"] = "Informacion de Escuela";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-header text-center">
+            <h2>@Model.Nombre</h2>
+            <span class="text-muted">@Model.Id</span>
+        </div>
+        <div class="card-body">
+            <address>
+                <p>Direccion: <b>@Model.Dirección</b></p>
+                <p>Pais: <b>@Model.Pais</b></p>
+                <p>Ciudad: <b>@Model.Ciudad</b></p>
+            </address>
+        </div>
+        <div class="card-footer">
+            <div class="row">
+                <div class="col-8">
+                    <p>Tipo de escuela: <b>@Model.TipoEscuela</b></p>
+                </div>
+                <div class="col-4">
+                    Fecha de creacion: <span class="text-muted">@Model.AñoDeCreación</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
