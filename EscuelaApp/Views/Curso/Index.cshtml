@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Curso>
+
+@{
+    ViewData["Title"] = "Lista de cursos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-4">Cursos</h1>
+        <hr class="my-4">
+        <p class="lead">Lista de cursos en la escuela</p>
+    </div>
+</div>
+
+<div class="container">
+   <partial name="_TablaObjetoPartial">
+</div>
+
