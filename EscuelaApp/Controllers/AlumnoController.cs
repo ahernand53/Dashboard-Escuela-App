@@ -26,12 +26,19 @@ namespace EscuelaApp.Controllers
             return View(ALUMNOS);
         }
 
-        [HttpGet("/alumnos/detalles")]
-        public IActionResult Details()
+        [HttpGet("/alumnos/detalles/{alumnoId?}")]
+        public IActionResult Details(string alumnoId)
         {
-            var ALUMNO = _context.Alumnos.FirstOrDefault();
+            if (string.IsNullOrEmpty(alumnoId)) 
+            {
+                return RedirectToAction("Index");
+            }
 
-            return View(ALUMNO);
+            var ALUMNO = from alumno in _context.Alumnos
+                         where alumno.Id == alumnoId
+                         select alumno;
+
+            return View(ALUMNO.SingleOrDefault());
         }
 
     }

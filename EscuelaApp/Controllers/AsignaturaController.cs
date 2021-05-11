@@ -19,9 +19,9 @@ namespace EscuelaApp.Controllers
 
         public IActionResult Index()
         {
-            var listaAsignaturas = _context.Asignaturas.ToList();
+            var ASIGNATURAS = _context.Asignaturas.ToList();
 
-            return View(listaAsignaturas);
+            return View(ASIGNATURAS);
         }
 
         [HttpGet("detalles/{asignaturaId?}")]
@@ -32,11 +32,11 @@ namespace EscuelaApp.Controllers
                 return RedirectToAction("Index");
             }
 
-            var asignatura = from asig in _context.Asignaturas
+            var ASIGNATURA = from asig in _context.Asignaturas
                              where asig.Id == asignaturaId
                              select asig;
 
-            return View(asignatura.SingleOrDefault());
+            return View(ASIGNATURA.SingleOrDefault());
         }
     }
 }
