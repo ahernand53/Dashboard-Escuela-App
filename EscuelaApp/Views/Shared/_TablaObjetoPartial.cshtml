@@ -9,15 +9,20 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Nombre</th>
+                <th scope="col">Controles</th>
             </tr>
         </thead>
         <tbody>
             @foreach (var obj in Model)
             {
-                <tr>
-                    <td>@obj.Id</td>
-                    <td>@obj.Nombre</td>
-                </tr>
+            <tr>
+                <td>@obj.Id</td>
+                <td>@obj.Nombre</td>
+                <td>
+                    <a class="btn btn-link" asp-action="Edit" asp-route-id="@obj.Id">Editar</a> |
+                    <a class="btn btn-link" asp-action="Details" asp-route-id="@obj.Id">Detalles</a>
+                            </td>
+            </tr>
             }
         </tbody>
     </table>

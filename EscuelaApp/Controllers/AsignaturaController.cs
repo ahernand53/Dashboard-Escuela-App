@@ -24,16 +24,16 @@ namespace EscuelaApp.Controllers
             return View(ASIGNATURAS);
         }
 
-        [HttpGet("detalles/{asignaturaId?}")]
-        public IActionResult Details(string asignaturaId)
+        [HttpGet("detalles/{id?}")]
+        public IActionResult Details(string id)
         {
-            if (string.IsNullOrEmpty(asignaturaId))
+            if (string.IsNullOrEmpty(id))
             {
                 return RedirectToAction("Index");
             }
 
             var ASIGNATURA = from asig in _context.Asignaturas
-                             where asig.Id == asignaturaId
+                             where asig.Id == id
                              select asig;
 
             return View(ASIGNATURA.SingleOrDefault());
